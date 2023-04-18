@@ -60,7 +60,7 @@ jobs:
           path: tf.plan
 
   apply:
-    needs: plan
+    needs: lint
     runs-on: ubuntu-latest
     if: |
       github.ref == 'main' &&
