@@ -53,10 +53,6 @@ jobs:
           -var-file=terraform.tfvars \
           -var="public_key=$PUBLIC_SSH_KEY" \
           -out=tf.plan
-      - uses: actions/upload-artifact@v2
-        with:
-          name: tfplan
-          path: tf.plan
 
   apply:
     needs: lint
@@ -103,4 +99,3 @@ jobs:
       - name: Terraform Destroy
         working-directory: ./infrastructure
         run: terraform destroy -auto-approve
-
