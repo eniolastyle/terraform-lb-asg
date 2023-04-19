@@ -53,15 +53,6 @@ jobs:
           -var-file=terraform.tfvars \
           -var="public_key=$PUBLIC_SSH_KEY" \
           -out=tf.plan
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: 'Terraform Plan for Feature A'
-          commit-message: 'Run terraform plan on feature-a branch'
-          branch: feature-a
-          base: main
-          body: 'This is an automatic pull request created by the Terraform Workflow for feature-a branch.'
-          labels: 'terraform-plan'
 
   apply:
     needs: lint
