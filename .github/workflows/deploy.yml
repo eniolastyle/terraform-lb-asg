@@ -36,7 +36,7 @@ jobs:
   plan:
     needs: lint
     runs-on: ubuntu-latest
-    if: github.ref == "refs/heads/feature-a"
+    if: github.ref == 'refs/heads/feature-a'
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2
