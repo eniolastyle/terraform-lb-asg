@@ -1,5 +1,4 @@
 # Load Balancers and component declaration
-
 resource "aws_lb_target_group" "terraform-one-tg" {
   name        = "terraform-one-tg"
   port        = 80
@@ -30,24 +29,24 @@ resource "aws_lb" "terraform-one-lb" {
 }
 
 resource "aws_lb_listener" "terraform-one-lbl" {
-  load_balancer_arn = aws_lb.terraform-one.arn
+  load_balancer_arn = aws_lb.terraform-one-lb.arn
   port              = 80
   protocol          = "HTTP"
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.terraform-one.arn
+    target_group_arn = aws_lb_target_group.terraform-one-tg.arn
   }
 }
 
 resource "aws_lb_target_group_attachment" "nginx-server" {
-  target_group_arn = aws_lb_target_group.terraform-one.arn
+  target_group_arn = aws_lb_target_group.terraform-one-tg.arn
   target_id        = aws_instance.nginx-server.id
   port             = 80
 }
 
 resource "aws_lb_target_group_attachment" "apache-server" {
-  target_group_arn = aws_lb_target_group.terraform-one.arn
+  target_group_arn = aws_lb_target_group.terraform-one-tg.arn
   target_id        = aws_instance.apache-server.id
   port             = 80
 }
