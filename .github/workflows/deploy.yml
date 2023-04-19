@@ -102,4 +102,5 @@ jobs:
           -out=tf.plan
       - name: Terraform Destroy
         working-directory: ./infrastructure
-        run: terraform destroy -auto-approve tfplan
+        run: terraform destroy -auto-approve tf.plan
+
