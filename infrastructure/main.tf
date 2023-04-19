@@ -9,18 +9,29 @@ data "aws_subnets" "subnets" {
   }
 }
 
+output "aws_subnets_ids" {
+  value = data.aws_subnets.subnets.ids
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
+
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
+
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
 
-  owners = ["099720109477"]
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  owners = ["099720109477"] # Canonical
 }
 
 data "template_file" "nginx_data_script" {
@@ -36,9 +47,6 @@ data "template_file" "apache_data_script" {
     server = "apache2"
   }
 }
-
-
-
 
 resource "aws_key_pair" "ec2-server" {
   key_name   = var.key_name

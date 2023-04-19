@@ -22,21 +22,20 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Code Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Setup Terraform
+      - name: Install Terraform
         uses: hashicorp/setup-terraform@v1
-      - name: Terraform fmt
-        run: terraform fmt -check
-        working-directory: ./infrastructure
-      - name: Terraform fmt validation
-        run: terraform validate
+        with:
+          terraform_version: 1.0.9
+      - name: Format Terraform code
+        run: terraform fmt -check -diff -recursive
         working-directory: ./infrastructure
 
   plan:
     needs: lint
     runs-on: ubuntu-latest
-    if: github.ref == "refs/heads/feature-a"
+    if: github.ref == 'refs/heads/feature-a'
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2
