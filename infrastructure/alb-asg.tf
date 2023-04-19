@@ -53,7 +53,7 @@ resource "aws_lb_target_group_attachment" "apache-server" {
 
 # ASG and component declaretion
 resource "aws_launch_template" "nginx-lt" {
-  name                   = "apache-lt"
+  name                   = "nginx-lt"
   image_id               = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
   key_name               = var.key_name
@@ -95,7 +95,7 @@ resource "aws_autoscaling_group" "terraform-one-asg" {
   target_group_arns         = [aws_lb_target_group.terraform-one-tg.arn]
 
   launch_template {
-    id      = aws_launch_template.apache-lt.id
+    id      = aws_launch_template.nginx-lt.id
     version = "$Latest"
   }
 }
