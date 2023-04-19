@@ -95,7 +95,7 @@ resource "aws_autoscaling_group" "terraform-one-asg" {
   target_group_arns         = [aws_lb_target_group.terraform-one-tg.arn]
 
   launch_template {
-    id      = aws_launch_template.nginx-lt.image_id
+    id      = aws_launch_template.nginx-lt.id
     version = "$Latest"
   }
 }
