@@ -93,10 +93,13 @@ jobs:
       - name: Terraform init
         run: terraform init -backend-config="bucket=$TF_STATE_BUCKET_NAME"
         working-directory: ./infrastructure
-      - name: Terraform Destroy
+      - name: Terraform plan
         working-directory: ./infrastructure
         run: |
-          terraform destroy \ 
-          -auto-approve \
+          terraform plan \
           -var-file=terraform.tfvars \
           -var="public_key=$PUBLIC_SSH_KEY" \
+          -out=tf.plan
+      - name: Terraform Destroy
+        working-directory: ./infrastructure
+        run: terraform destroy -auto-approve tfplan
