@@ -77,6 +77,7 @@ jobs:
           -var="public_key=$PUBLIC_SSH_KEY" \
 
   destroy:
+    needs: lint
     runs-on: ubuntu-latest
     if: |
       github.ref == 'feature-b' &&
@@ -89,13 +90,6 @@ jobs:
       - name: Terraform init
         run: terraform init -backend-config="bucket=$TF_STATE_BUCKET_NAME"
         working-directory: ./infrastructure
-      - name: Terraform plan
-        working-directory: ./infrastructure
-        run: |
-          terraform plan \
-          -var-file=terraform.tfvars \
-          -var="public_key=$PUBLIC_SSH_KEY" \
-          -out=tf.plan
       - name: Terraform Destroy
         working-directory: ./infrastructure
         run: terraform destroy -auto-approve
