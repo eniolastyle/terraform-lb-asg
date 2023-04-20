@@ -78,3 +78,5 @@ If you have any further clarification, kindly reach out to me with the below inf
 
 Lawal Eniola Abdullateef  
 Twitter: [@eniolaamiola\_](https://twitter.com/eniolaamiola_)
+linkedIn: [@eniolaamiola\_](https://www.linkedin.com/in/abdullateef-lawal-b46786214)
+Blog: [@eniolaamiola\_](https://devopsnode.hashnode.dev)
