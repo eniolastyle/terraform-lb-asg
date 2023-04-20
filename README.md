@@ -14,9 +14,9 @@ This project uses Terraform to provision an AWS Load Balancer and ASG, and uses 
 
 ## Pre-requisites
 
-- An AWS account
-- Terraform CLI installed
-- AWS CLI installed and configured with access and secret keys
+- An AWS account.
+- Terraform CLI installed.
+- AWS CLI installed and configured with access and secret keys.
 
 ## Usage
 
