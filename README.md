@@ -77,4 +77,6 @@ If you have any further clarification, kindly reach out to me with the below inf
 ## Author
 
 Lawal Eniola Abdullateef  
-Twitter: [@eniolaamiola\_](https://twitter.com/eniolaamiola_)
+Twitter: [@eniolaamiola\_](https://twitter.com/eniolaamiola_).
+linkedIn: [Lawal Abdullateef\_](https://www.linkedin.com/in/abdullateef-lawal-b46786214).
+Blog: [devopsnode\_](https://devopsnode.hashnode.dev).
