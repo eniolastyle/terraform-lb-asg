@@ -2,7 +2,12 @@
 
 This project uses Terraform to provision an AWS Load Balancer and ASG, and uses GitHub Actions to automate the deployment of the infrastructure. The infrastructure can be deployed to multiple environments (e.g. dev, stage, prod) by using different Terraform workspaces.
 
-## Output
+## Outputs and GHA Process
+![Screenshot from 2023-04-20 14-49-59](https://user-images.githubusercontent.com/58726365/233387705-fcec2b80-ca64-423e-88f0-d304dbcefaae.png)
+![Screenshot from 2023-04-20 14-50-21](https://user-images.githubusercontent.com/58726365/233387723-002dbf6e-bde1-4113-a8fe-041092992f78.png)
+![Screenshot from 2023-04-20 14-51-31](https://user-images.githubusercontent.com/58726365/233387730-047f5606-4851-499a-a63d-2c95aa103662.png)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 ![Screenshot from 2023-04-20 11-23-40](https://user-images.githubusercontent.com/58726365/233338580-dace5e64-b88f-42bd-8e18-acaa2f95cd3c.png)
 ![Screenshot from 2023-04-20 11-23-12](https://user-images.githubusercontent.com/58726365/233338626-4e200739-2ba5-4167-9b6d-03e1e593e130.png)
