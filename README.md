@@ -4,8 +4,8 @@ This project uses Terraform to provision an AWS Load Balancer and ASG, and uses 
 
 ## Output
 
-![Screenshot from 2023-04-19 16-00-04](https://user-images.githubusercontent.com/58726365/233337010-3d6c2547-640f-4480-a5fd-c248d1166c54.png)
-![Screenshot from 2023-04-19 16-00-15](https://user-images.githubusercontent.com/58726365/233337222-fac4c909-7078-4a19-8d4b-8c9517cb6846.png)
+![Screenshot from 2023-04-20 11-23-40](https://user-images.githubusercontent.com/58726365/233338580-dace5e64-b88f-42bd-8e18-acaa2f95cd3c.png)
+![Screenshot from 2023-04-20 11-23-12](https://user-images.githubusercontent.com/58726365/233338626-4e200739-2ba5-4167-9b6d-03e1e593e130.png)
 
 ## Pre-requisites
 
